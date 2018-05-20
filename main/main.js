@@ -18,5 +18,5 @@ module.exports = function main(distance, waitingTime) {
     }
     // 加上等待时间收费
     totalFee += waitingTime * CHARGE_FOR_WAITING_PER_MINUTE;
-    return totalFee;
+    return Math.round(totalFee);
 }
