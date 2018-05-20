@@ -16,5 +16,11 @@ describe('taxi fee', function () {
     it('should charge for 50% more if distance is further than 8km', () => {
         expect(main(9, 0)).toBeCloseTo(12, 4);
         expect(main(10, 0)).toBeCloseTo(13.2, 4); // 6 + 8 * 0.8 + 2 * 0.4
+    });
+    it('should charge 0.25 per minute if taxi have waittng time', () => {
+        expect(main(0, 10)).toBeCloseTo(8.5, 4);
+        expect(main(2, 10)).toBeCloseTo(8.5, 4);
+        expect(main(10, 10)).toBeCloseTo(15.7, 4);
+
     })
 });
